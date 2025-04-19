@@ -1,6 +1,6 @@
 {
   "name": "@randajan/chainlock",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A minimal async lock with timeout support and parent-child queueing.",
   "repository": "randajan/chainlock",
   "type": "module",
