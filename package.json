@@ -1,6 +1,6 @@
 {
   "name": "@randajan/treelock",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A minimal async lock with timeout support and parent-child queueing.",
   "repository": "randajan/treelock",
   "type": "module",
