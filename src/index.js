@@ -1,6 +1,6 @@
-import { ChainLock } from "./ChainLock";
+import { TreeLock } from "./TreeLock";
 
 
-export { ChainLock };
+export { TreeLock };
 
-export default (timeout)=>new ChainLock(timeout);
+export default (options={})=>new TreeLock(options);

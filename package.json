@@ -1,8 +1,8 @@
 {
-  "name": "@randajan/chainlock",
+  "name": "@randajan/treelock",
   "version": "0.0.2",
   "description": "A minimal async lock with timeout support and parent-child queueing.",
-  "repository": "randajan/chainlock",
+  "repository": "randajan/treelock",
   "type": "module",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.mjs",
@@ -33,9 +33,9 @@
     "javascript",
     "thread-safe"
   ],
-  "homepage": "https://github.com/randajan/chainlock",
+  "homepage": "https://github.com/randajan/treelock",
   "bugs": {
-    "url": "https://github.com/randajan/chainlock/issues"
+    "url": "https://github.com/randajan/treelock/issues"
   },
   "author": {
     "name": "Jan Randa",

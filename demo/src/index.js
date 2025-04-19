@@ -6,38 +6,25 @@ import { sleep } from "@randajan/sleep";
 (async ()=>{
     const start = Date.now();
 
-    const lockA = createLock();
-    const lockB = lockA.sub();
-    const lockC = lockA.sub();
+    const lockA = createLock({
+        name:"A",
+        on:(lck, status, result)=>{
+            console.log(lck.name, status, [lockA.ram, lockB.ram, lockC.ram])
+        }
+    });
 
-    const int = setInterval(_=>console.log([lockA.pending, lockB.pending, lockC.pending]), 20);
+    const lockB = lockA.sub({name:"B"});
+    const lockC = lockA.sub({name:"C"});
 
-    let prom = Promise.all([
+    await Promise.all([
         lockA.run(_=>sleep(100)),
         lockA.run(_=>sleep(100)),
         lockB.run(_=>sleep(100)),
         lockB.run(_=>sleep(100)),
-        lockC.run(_=>sleep(100))
-    ]);
-
-    await sleep(10);
-
-    prom = Promise.all([prom, lockA.run(_=>sleep(100))]);
-
-    await sleep(10);
-
-    prom = Promise.all([prom, lockA.run(_=>sleep(100))]);
-
-    await sleep(10);
-
-    prom = Promise.all([prom, lockA.run(_=>sleep(100))]);
-
-    await prom;
+        lockC.run(_=>sleep(100)),
+        lockA.run(_=>sleep(100))
+    ]).catch(()=>{});
 
     console.log("duration", Date.now()-start);
-
-    await sleep(20);
-
-    clearInterval(int);
 
 })().catch(err=>console.error(err));
