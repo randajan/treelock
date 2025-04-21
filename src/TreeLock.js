@@ -24,7 +24,7 @@ export class TreeLock {
         }
 
         const finish = ()=>_p.ram = Math.max(0, _p.ram-1);
-        const done = () =>{ finish(); _p.on(this, "done"); };
+        const done = (r) =>{ finish(); _p.on(this, "done"); return r; };
         const crash = (err)=>{
             finish();
             const status = (err instanceof Timeout) ? "timeout" : "error";
