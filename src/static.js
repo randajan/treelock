@@ -20,7 +20,7 @@ export const toTimeoutMs = (num)=>toInt(num, 0, 2147483647, "timeout");
 
 export const withTimeout = (prom, tms)=>{
     if (!tms) { return prom; }
-    return Promise.race([prom, timeout(tms, new Timeout("Timeout"))]);
+    return Promise.race([prom, timeout(tms, new Timeout(`Execution time exceeded ${tms/1000}s`))]);
 }
 
 
