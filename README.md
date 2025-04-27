@@ -1,5 +1,8 @@
 # @randajan/treelock
 
+[![NPM](https://img.shields.io/npm/v/@randajan/treelock.svg)](https://www.npmjs.com/package/@randajan/treelock) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+
 **TreeLock** is a minimalist and deterministic locking mechanism for JavaScript that organizes asynchronous operations into a hierarchical, tree-like structure. Each lock node cooperates with its root and its branches to ensure that tasks are executed in the correct order — peacefully, predictably, and without deadlocks.
 
 > _“I shall wait until I am calm, my root is calm, and all my branches are calm.”_  
